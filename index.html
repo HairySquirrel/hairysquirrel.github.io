@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hairy Squirrel</title>
+        <link rel="icon" href="icon.ico">
+        <script>
+            function research() {
+                input = document.getElementById('input').value;
+                link = `https://www.google.com/search?q=${input}`;
+                document.location = link;
+            }
+        </script>
+        <script>  
+            function enter(event) {
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                    research();
+                }
+            }
+        </script>
+        <script>
+            var squirrels = Math.floor(Math.random() * 1000000);
+            window.setInterval(
+                function () {
+                    squirrels = squirrels + 1;
+                    document.getElementById("squirrel").innerHTML="Number of squirrels given to families: " + squirrels;
+                }
+            , 1000);
+        </script>
+        <style>
+            body{
+                background-image: url('https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vbWVkaWEucmJsLm1zL2ltYWdlP3U9JTJGZmlsZXMlMkYyMDE2JTJGMDclMkYxOCUyRjYzNjA0NDc0MDU3MjA3ODg4My0xNDc1NDc2MDUxX2JhYnktc3F1aXJyZWwuanBnJmhvPWh0dHBzJTNBJTJGJTJGYXo2MTY1Nzgudm8ubXNlY25kLm5ldCZzPTgyNiZoPTY0NTNmYWI0Y2ExOTFhMDE4MzM4YTM4NGFmYmViNjdjM2U1MzY1MmI4Y2I2MzM4ZjYwYjMzOGYxNDRhYmE1YTImc2l6ZT05ODB4JmM9MzY1NDI0MzkwMiIsImV4cGlyZXNfYXQiOjE1ODUwMDE0NDZ9.2gmI81XqLaqIzlhuJS90V2W3ti0ItqJpLbpa1qtrQDU/img.jpg');
+                background-size: cover;
+            }
+        </style>
+        <style>
+            .container{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Each time you do a research, a familly adopt a squirrel.</h1>
+            <input type="text" id="input" name="Input" onkeydown="enter(event)" value=""> 
+            <input type="button" id="search" onclick="research()" value="Search">
+            <p>Created by Émile Turcotte</p>
+            <p id="squirrel">Number of squirrels given to families: </p>
+        </div>
+    </body>
+</html>
